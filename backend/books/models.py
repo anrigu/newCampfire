@@ -16,6 +16,7 @@ class Tag(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=150)
     description = models.CharField(max_length=1000)
+    edition = models.CharField(max_length=1500, blank=True, null=True)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     publishing_year = models.IntegerField(default=2500) #Default is the year 2500
     #If author is a foreign key, we can link together books written by the same author 
